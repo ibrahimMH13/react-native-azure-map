@@ -20,14 +20,14 @@ interface AzureMapMarkerProps {
 }
 
 const AzureMarker: React.FC<AzureMapMarkerProps> = ({
-                                                      position,
-                                                      content,
-                                                      draggable = false,
-                                                      color = '#1A73AA',
-                                                      secondaryColor = 'white',
-                                                      anchor = 'bottom',
-                                                      injectJavaScript = null,
-                                                    }) => {
+  position,
+  content,
+  draggable = false,
+  color = '#1A73AA',
+  secondaryColor = 'white',
+  anchor = 'bottom',
+  injectJavaScript = null,
+}) => {
   const latitude = position[0];
   const longitude = position[1];
 
@@ -46,7 +46,7 @@ const AzureMarker: React.FC<AzureMapMarkerProps> = ({
       })();
     `;
   }, [content, draggable, color, secondaryColor, anchor, latitude, longitude]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     if (injectJavaScript) {
       injectJavaScript(createMarkerScript());
