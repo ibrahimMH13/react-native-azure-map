@@ -47,13 +47,10 @@ const AzureMap: React.FC<AzureMapProps> = ({
   const webViewRef = useRef<WebView>(null);
   const [isMapInstanceAvailable, setIsMapInstanceAvailable] = useState(false);
   const finalStyle: any = {
-    width:
-      (isViewStyle(style) && typeof style === 'object' && style.width) ||
-      '100%',
-    height:
-      (isViewStyle(style) && typeof style === 'object' && style.height) ||
-      '100%',
     ...(typeof style === 'object' ? style : {}),
+    flex: !style?.width && !style?.height ? 1 : undefined,
+    height: style?.height,
+    width: style?.width,
   };
 
   useEffect(() => {
