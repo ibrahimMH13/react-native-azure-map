@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 interface AzureMapMarkerProps {
   position: [number, number];
   content: string;
-  injectJavaScript: string | null;
-  baseCssUri: string | null;
-  draggable: boolean;
-  color: string | null;
-  secondaryColor: string | null;
-  anchor:
+  injectJavaScript: ((script: string) => void) | null;
+  baseCssUri?: string | null;
+  draggable?: boolean;
+  color?: string | null;
+  secondaryColor?: string | null;
+  anchor?:
     | 'center'
     | 'left'
     | 'right'
@@ -19,35 +19,40 @@ interface AzureMapMarkerProps {
     | 'bottom-right';
 }
 
-// @ts-ignore
 const AzureMarker: React.FC<AzureMapMarkerProps> = ({
-  position,
-  content,
-  draggable = false,
-  color = '#1A73AA',
-  secondaryColor = 'white',
-  anchor = 'bottom',
-  injectJavaScript = null,
-}) => {
+                                                      position,
+                                                      content,
+                                                      draggable = false,
+                                                      color = '#1A73AA',
+                                                      secondaryColor = 'white',
+                                                      anchor = 'bottom',
+                                                      injectJavaScript = null,
+                                                    }) => {
+  const latitude = position[0];
+  const longitude = position[1];
+
+  const createMarkerScript = useCallback(() => {
+    return `
+      (function() {
+        const marker = new atlas.HtmlMarker({
+          htmlContent: \`${content}\`,
+          draggable: ${draggable},
+          color: '${color}',
+          secondaryColor: '${secondaryColor}',
+          anchor: '${anchor}',
+          position: [${latitude}, ${longitude}],
+        });
+        window.mapInstance.markers.add(marker);
+      })();
+    `;
+  }, [content, draggable, color, secondaryColor, anchor, latitude, longitude]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (injectJavaScript) {
-      const script = `
-                (function() {
-                    const marker = new atlas.HtmlMarker({
-                        htmlContent: \`${content}\`,
-                        draggable: ${draggable},
-                        color: ${color},
-                        secondaryColor: ${secondaryColor},
-                        anchor: ${anchor},
-                        position: [${position[0]}, ${position[1]}],
-                    });
-                    window.mapInstance.markers.add(marker);
-                })();
-            `;
-      // @ts-ignore
-      injectJavaScript(script);
+      injectJavaScript(createMarkerScript());
     }
-  }, [injectJavaScript, position, content]);
+  }, [injectJavaScript, createMarkerScript]);
+
   return null;
 };
 

@@ -80,7 +80,7 @@
     "react-native": "0.74.5",
     "react-native-builder-bob": "^0.30.0",
     "release-it": "^15.0.0",
-    "typescript": "^5.2.2"
+    "typescript": "~5.1.0"
   },
   "resolutions": {
     "@types/react": "^18.2.44"
@@ -133,16 +133,7 @@
     ],
     "rules": {
       "react/react-in-jsx-scope": "off",
-      "prettier/prettier": [
-        "error",
-        {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
-        }
-      ]
+      "react-hooks/exhaustive-deps": "off"
     }
   },
   "eslintIgnore": [

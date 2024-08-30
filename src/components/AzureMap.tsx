@@ -146,9 +146,7 @@ const AzureMap: React.FC<AzureMapProps> = ({
   }, [isMapInstanceAvailable]);
 
   return (
-    <View
-      style={finalStyle}
-    >
+    <View style={finalStyle}>
       <WebView
         ref={webViewRef}
         originWhitelist={['*']}
