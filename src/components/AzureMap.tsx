@@ -22,9 +22,6 @@ interface AzureMapProps {
   baseCssUri?: string | null;
   children?: any;
 }
-function isViewStyle(style: any): style is any {
-  return style && typeof style === 'object' && !Array.isArray(style);
-}
 
 const AzureMap: React.FC<AzureMapProps> = ({
   apiKey,
