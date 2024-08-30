@@ -1,6 +1,6 @@
 # react-native-azure-maps
 
-react native componetnt for microsoft azure maps un offical
+react native component for microsoft azure maps unofficial
 
 ## Installation
 
@@ -31,4 +31,3 @@ MIT
 
 ---
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
