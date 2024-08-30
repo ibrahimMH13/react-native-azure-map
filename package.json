@@ -1,6 +1,6 @@
 {
   "name": "react-native-azure-map",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "react native component for MS Azure maps cross platform (IOS & Android)",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
