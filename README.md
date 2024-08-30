@@ -5,14 +5,14 @@ react native component for microsoft azure maps unofficial
 ## Installation
 
 ```sh
-npm install react-native-azure-maps
+npm install react-native-azure-map
 ```
 
 ## Usage
 
 
 ```js
-import { AzureMap } from 'react-native-azure-maps';
+import { AzureMap } from 'react-native-azure-map';
 
 // ...
 <AzureMap apiKey={} lan={} lang={}>
