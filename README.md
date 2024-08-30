@@ -12,11 +12,12 @@ npm install react-native-azure-maps
 
 
 ```js
-import { multiply } from 'react-native-azure-maps';
+import { AzureMap } from 'react-native-azure-maps';
 
 // ...
-
-const result = await multiply(3, 7);
+<AzureMap apiKey={} lan={} lang={}>
+  <AzureMarker position={} content={}></AzureMarker>
+</AzureMap>
 ```
 
 
