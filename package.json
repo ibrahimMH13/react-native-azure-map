@@ -1,7 +1,7 @@
 {
   "name": "react-native-azure-map",
   "version": "0.1.1",
-  "description": "react native component for microsoft azure maps unofficial",
+  "description": "react native component for MS Azure maps cross platform (IOS & Android)",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
@@ -47,7 +47,12 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "Azure",
+    "map",
+    "maps",
+    "react",
+    "microsfot"
   ],
   "repository": {
     "type": "git",
