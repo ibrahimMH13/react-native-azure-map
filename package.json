@@ -1,5 +1,5 @@
 {
-  "name": "react-native-azure-maps",
+  "name": "react-native-azure-map",
   "version": "0.1.0",
   "description": "react native component for microsoft azure maps unofficial",
   "source": "./src/index.tsx",
