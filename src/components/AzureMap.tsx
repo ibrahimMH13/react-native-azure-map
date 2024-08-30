@@ -3,8 +3,8 @@ import { View } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 interface AzureMapProps {
-  lan: number;
-  lang: number;
+  latitude: number;
+  longitude: number;
   style?: any;
   onMapReady?: () => void;
   apiKey: string;
@@ -25,8 +25,8 @@ interface AzureMapProps {
 
 const AzureMap: React.FC<AzureMapProps> = ({
   apiKey,
-  lan,
-  lang,
+  latitude,
+  longitude,
   style = {},
   zoom = 7,
   mapStyleMode = 'grayscale',
@@ -81,7 +81,7 @@ const AzureMap: React.FC<AzureMapProps> = ({
       <script>
         (function() {
           const map = new atlas.Map('map', {
-            center: [${lan}, ${lang}],
+            center: [${latitude}, ${longitude}],
             zoom: ${zoom},
             style: '${mapStyleMode}',
             authOptions: {
