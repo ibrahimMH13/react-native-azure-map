@@ -15,7 +15,7 @@ npm install react-native-azure-map
 import { AzureMap } from 'react-native-azure-map';
 
 // ...
-<AzureMap apiKey={}  lan={34.46667} lang={31.5} zoom={10} >
+<AzureMap apiKey={}  latitude={31.5} longitude={10} zoom={10} >
   <AzureMarker position={} htmlIcon={}></AzureMarker>
 </AzureMap>
 ```
@@ -48,7 +48,7 @@ import { AzureMap } from 'react-native-azure-map';
 
 ## Example
 ```angular2html
-<AzureMap apiKey={}  lan={34.46667} lang={31.5} zoom={10} >
+<AzureMap apiKey={}  latitude={31.5} longitude={10} zoom={10} >
 </AzureMap>
 
 ```
